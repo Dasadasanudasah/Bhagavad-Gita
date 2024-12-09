@@ -634,7 +634,26 @@ footer form input[type="submit"]:hover {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
+/* Responsive Styles for Chapter Description */
+@media screen and (max-width: 768px) {
+    #chapter-description {
+        padding: 15px;
+        font-size: 18px !important; /* Adjust font size for smaller screens */
+    }
+    #chapter-description img.chapter-image {
+        max-width: 50%; /* Increase image size on medium screens */
+    }
+}
 
+@media screen and (max-width: 480px) {
+    #chapter-description {
+        padding: 10px;
+        font-size: 16px !important; /* Smaller font size for mobile */
+    }
+    #chapter-description img.chapter-image {
+        max-width: 70%; /* Make image larger for readability */
+    }
+}
 
 
 /* Chapter Title with #f1e1a6 Shade */
