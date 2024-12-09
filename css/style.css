@@ -1,0 +1,680 @@
+.asar-regular {
+    font-family: "Asar", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+ 
+body {
+    font-family: sans-serif, Poppins;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;  /* Add this line */
+    padding: 0; /* Add this line */
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(to right, #1e3d58, #4b6d89);  /* Dark blue gradient */
+    color: white;
+    border-bottom: 4px solid #ffb703;
+}
+
+header h1 {
+    font-family: 'Georgia', serif;
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    font-weight: 300;
+}
+
+.floating-image {
+    width: 400px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.floating-image:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+header img {
+    max-width: 300px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* Navigation Bar */
+nav ul {
+    list-style: none;
+    margin-top: 30px;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+
+/* Main Content */
+main {
+    padding: 40px 20px;
+    background-color: #fff;
+    margin: 0 auto;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 15px;
+    margin: 0 10%;
+}
+
+/* Chapter Title Styling */
+h2 {
+    font-size: 3rem;               /* Larger font size for prominence */
+    color: #1e3d58;                /* Dark blue color for the title */
+    font-weight: 700;              /* Make the title bold */
+    margin-top: 40px;              /* Add some spacing above the title */
+    margin-bottom: 20px;           /* Space below the title */
+    text-align: center;            /* Center the title */
+    letter-spacing: 2px;           /* Slight letter spacing for elegance */
+    text-transform: uppercase;     /* Capitalize the title */
+    font-family: 'Sans-serif', serif; /* Use a serif font for a classical look */
+    line-height: 1.2;              /* Slightly tighter line height */
+    position: relative;
+    z-index: 1;
+}
+
+/* For responsiveness (smaller screens) */
+@media screen and (max-width: 768px) {
+    h2 {
+        font-size: 2.2rem;       /* Reduce font size for smaller screens */
+    }
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* General Button Styling (For both chapter title and chapter full button) */
+.btn-common {
+    background: #faa307; /* Warm orange background */
+    color: white; /* White text for contrast */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+    display: inline-block; /* Ensures it's treated as a block */
+    text-align: center; /* Centers text inside the button */
+    width: 100%; /* Ensure buttons have the same width */
+    box-sizing: border-box; /* Include padding in width calculation */
+    font-size: 1.1rem; /* Adjust font size for consistency */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover Effect for Buttons */
+.btn-common:hover {
+    background: #fffacd; /* Light yellow background on hover */
+    color: black; /* Black text on hover */
+    text-decoration: none;
+}
+
+/* Remove outer button from li, make li clickable */
+ul li {
+    cursor: pointer;
+    padding: 10px 15px;
+    background-color: #faa307; /* Same warm orange for li items */
+    color: white; /* White text for contrast */
+    font-size: 16px;
+    margin: 10px 0;
+    border-radius: 8px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ensure li behaves like a button */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Hover effect for li */
+ul li:hover {
+    background-color:#ffec3e; /* Light yellow background on hover */
+    color: #9e0000; /* Black text on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Adjust for small screen sizes */
+@media screen and (max-width: 768px) {
+    ul li {
+        background-color: #fbbf60; /* Lighter orange for small screens */
+        font-size: 1rem;
+    }
+    .btn-common {
+        font-size: 1rem; /* Adjust font size on smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    ul li {
+        background-color: #f9a92f; /* Slightly different shade for mobile */
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+    .btn-common {
+        font-size: 0.9rem; /* Adjust button font size for mobile */
+    }
+}
+
+/* Chapter Full Button */
+#chapter-full-button {
+    display: inline-block;
+    text-align: center;
+    padding: 10px 15px;
+    background: #faa307; /* Same orange background */
+    color: rgb(0, 0, 0); /* Black text for contrast */
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: 100%; /* Ensure it matches the size of other buttons */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+#chapter-full-button:hover {
+    background: #ffec3e; /* Light yellow background on hover */
+    color: #9e0000; /* Black text on hover */
+    text-decoration: none;
+}
+
+
+.chapter-image {
+    max-width: 100%; /* Ensures it scales with the container */
+    height: auto; /* Keep the aspect ratio */
+    margin: 20px auto; /* Center the image horizontally */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 480px) {
+    ul li {
+        background-color: #ffab61; /* Lighter orange for very small screens */
+        font-size: 0.9rem; /* Smaller font size for mobile devices */
+        padding: 10px; /* Adjust padding for small screens */
+    }
+
+    .chapter-description {
+        background-color: #f5d070; /* Soft pastel yellow with a hint of gold */
+    }
+
+    #Chapters li:hover {
+        background-color: #f8e19d; /* Even softer yellow for mobile hover */
+    }
+}
+
+
+
+/* Footer Styles */
+/* Footer Styles */
+footer {
+    background: linear-gradient(135deg, #1e3d58, #263344);  /* Dark blue gradient for a richer feel */
+    color: #fff;
+    text-align: center;
+    padding: 40px 20px;
+    font-family: 'Georgia', serif; /* Elegant serif font for a traditional and spiritual touch */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    border-top: 5px solid #FFD700; /* Gold divider */
+}
+
+footer h2 {
+    font-size: 2.4rem;
+    color: #FFD700; /* Gold color to make it stand out */
+    margin-bottom: 20px;
+    font-weight: bold;
+    letter-spacing: 1px; /* Slight letter spacing for a refined feel */
+    text-transform: uppercase; /* All caps for prominence */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); /* Text shadow for depth */
+}
+
+footer p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    line-height: 1.8;
+    color: #f4f4f4; /* Light gray text color for better readability */
+}
+
+footer a {
+    color: #FFD700; /* Gold link color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #FF9933; /* Saffron color on hover */
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Responsive Styles for Small Screens */
+@media (max-width: 768px) {
+    footer {
+        padding: 30px 15px; /* Less padding on mobile */
+    }
+
+    footer h2 {
+        font-size: 1.8rem; /* Smaller font size for headings on mobile */
+    }
+
+    footer p {
+        font-size: 1rem; /* Smaller font size for paragraphs on mobile */
+    }
+
+    footer .footer-section p {
+        font-size: 1rem; /* Ensure text is readable on smaller devices */
+    }
+
+    footer .footer-section {
+        margin-bottom: 20px; /* Adjust spacing between sections on mobile */
+    }
+
+    footer a {
+        font-size: 1.1rem; /* Make links slightly smaller on mobile */
+    }
+}
+
+footer .footer-section {
+    margin-bottom: 30px;
+}
+
+footer .footer-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #FFD700; /* Gold color for section headings */
+    font-weight: bold;
+}
+
+footer .footer-section p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #f4f4f4; /* Light gray color for paragraph text */
+    line-height: 1.8;
+}
+
+/* Back to top link */
+footer p a {
+    font-size: 1rem;
+    color: #FFD700;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer p a:hover {
+    color: #FF9933;
+    text-decoration: underline;
+}
+
+/* Footer Form Styles */
+footer form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.1);  /* Slight background for the form */
+    border-radius: 10px;  /* Rounded corners for a soft look */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+footer form label {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #fff;  /* White text color */
+    text-align: left;
+    width: 100%;
+    margin-top: 10px;
+}
+
+footer form input,
+footer form textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    border: 2px solid #FFD700;  /* Gold border for input fields */
+    border-radius: 5px;
+    background-color: #f4f4f4;
+    color: #333;  /* Dark text for contrast */
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Focus effect on inputs and textarea */
+footer form input:focus,
+footer form textarea:focus {
+    outline: none;
+    border-color: #FF6F61;  /* Coral color on focus */
+    background-color: #fff;  /* White background on focus */
+}
+
+/* Submit button */
+footer form input[type="submit"] {
+    padding: 12px 30px;
+    background-color: #FFD700;  /* Gold background for the button */
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+footer form input[type="submit"]:hover {
+    background-color: #FF6F61;  /* Coral color on hover */
+}
+
+/* Responsive form */
+@media (max-width: 768px) {
+    footer form {
+        width: 90%;  /* Make form take up more space on smaller screens */
+        padding: 15px;
+    }
+
+    footer form label {
+        font-size: 1rem;  /* Adjust label font size for mobile */
+    }
+
+    footer form input,
+    footer form textarea {
+        font-size: 0.95rem;  /* Adjust input font size */
+        padding: 10px;  /* Reduce padding for mobile */
+    }
+}
+
+/* Counter Container */
+.counter-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 15px;
+    background-color: #1F2A37;
+    border-radius: 12px;
+    width: 80%;
+    max-width: 800px;
+    margin: 30px auto;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    background-image: linear-gradient(145deg, #1F2A37, #283D4A);
+    gap: 20px; /* Add spacing between boxes */
+}
+
+/* Style for Individual Counter Items */
+.counter-item {
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 15px 20px;
+    background-color: #2F3B4C;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); /* Normal box shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    width: 100%;
+}
+
+/* Counter Numbers */
+.counter-item h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #F39C12;
+    margin-bottom: 8px;
+    transition: transform 0.5s ease-out, color 0.5s ease-out;
+}
+
+/* Subheading for the counters */
+.counter-item h5 {
+    font-size: 1.1rem;
+    color: #BDC3C7;
+    font-weight: 400;
+    margin-top: 5px;
+}
+
+/* Hover Effect - Animation */
+.counter-item:hover {
+    transform: translateY(-5px); /* Counterbox gently lifts on hover */
+    filter: brightness(1.0); /* Slight brightness effect on hover */
+
+    box-shadow: 0 0 18px rgba(255, 111, 97, 0.6); /* Soft neon glow on hover */
+}
+
+/* Counter Numbers Hover Effect */
+.counter-item:hover h1 {
+    color: #FF6F61; /* Soft coral color on hover */
+    transform: scale(1.2); /* Slightly enlarge the number on hover */
+}
+
+/* Number Animation: Bounce-in Effect */
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Keyframe animation for fade-in and slide-up effect */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Applying the animation */
+.counter-item:nth-child(1) h1 {
+    animation: bounceIn 1s ease-out 0.5s forwards;
+}
+.counter-item:nth-child(2) h1 {
+    animation: bounceIn 1s ease-out 1s forwards;
+}
+.counter-item:nth-child(3) h1 {
+    animation: bounceIn 1s ease-out 1.5s forwards;
+}
+
+/* Media Queries for Smaller Screens */
+@media (max-width: 768px) {
+    .counter-container {
+        flex-direction: column;
+        padding: 15px;
+    }
+    .counter-item {
+        margin-bottom: 15px;
+        width: 90%;
+    }
+}
+
+/* Navigation Strip */
+.nav-strip {
+    background: linear-gradient(135deg, #34495e, #2c3e50); /* Gradient background */
+    display: flex;
+    justify-content: center;  /* Centers nav items horizontally */
+    align-items: center;      /* Vertically aligns the items */
+    padding: 6px 0;           /* Reduced padding for a shorter nav strip */
+    margin-top: 0;            /* Attach it directly below the header */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    transition: background 0.3s ease;
+}
+
+/* Navigation Item Styling */
+.nav-item {
+    color: #fff;
+    padding: 8px 18px;       /* Slightly smaller padding */
+    font-size: 0.9rem;        /* Smaller font size for a more compact look */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 12px;           /* Reduced margin between items */
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, letter-spacing 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* Hover Effect for Navigation Items */
+.nav-item:hover {
+    background-color: #e74c3c; /* Red background on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    letter-spacing: 2px;  /* Increase letter-spacing for emphasis */
+}
+
+/* Active Navigation Item */
+.nav-item.active {
+    background-color: #f39c12; /* Orange background for active item */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transform: translateY(-1px); /* Slight lift */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .nav-strip {
+        flex-direction: column;  /* Stack nav items vertically on smaller screens */
+        padding: 8px 0;          /* Adjust padding for mobile */
+    }
+
+    .nav-item {
+        margin: 6px 0;           /* Reduced margin for vertical stacking */
+        font-size: 1rem;         /* Slightly larger font size for readability */
+        padding: 10px 18px;      /* Adjust padding for mobile screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-item {
+        font-size: 0.85rem;      /* Smaller font size for very small screens */
+        padding: 8px 14px;       /* Reduced padding for mobile devices */
+    }
+}
+
+
+
+
+
+
+/* Chapter Summary Styling */
+.chapter-summary {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+/* Smooth Fade-In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+/* Summary Section Styling */
+
+#chapter-description {
+    background-color: #f1e1a6;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center; /* Center-align text */
+    font-weight: 500;
+    font-size: 21px !important;
+    line-height: 1.5 !important;
+    color: #373737 !important;
+    padding-top: 1px;
+    padding-bottom: 15px;
+    word-break: break-word !important;
+}
+
+#chapter-description p {
+    margin: 20px;
+}
+
+
+#chapter-description img.chapter-image {
+    max-width: 30%;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+/* Chapter Title with #f1e1a6 Shade */
+
+/* Styling for the chapter title */
+#chapter-description h2 {
+    font-family:  sans-serif,serif; /* Elegant serif font for a professional feel */
+    font-size: 1.8rem; /* Moderate font size for emphasis */
+    font-weight: 600; /* Semi-bold for clarity */
+    color: #4f3c1d; /* Rich brown for contrast */
+    text-align: center; /* Center alignment for focus */
+    margin: 0px auto; /* Balanced spacing */
+    padding: 12px 18px; /* Comfortable padding */
+    background-color: #eca83c; /* Warm yellow shade for the background */
+    border: 2px solid #d3c08e; /* Slightly darker border for definition */
+    border-radius: 10px; /* Rounded corners for a polished look */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for subtle depth */
+    max-width: 700px; /* Limit width for better focus */
+    line-height: 1.5; /* Improve readability */
+    letter-spacing: 0.5px; /* Slight spacing for a cleaner look */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    #chapter-description h2 {
+        font-size: 1.6rem; /* Slightly smaller font for tablets */
+        padding: 10px 15px; /* Adjusted padding for smaller screens */
+        max-width: 90%; /* Expand width for better use of space */
+    }
+}
+
+@media (max-width: 480px) {
+    #chapter-description h2 {
+        font-size: 1.4rem; /* Compact font size for mobile screens */
+        padding: 8px 12px; /* Further reduction in padding */
+        border: 1px solid #d3c08e; /* Thinner borders for smaller screens */
+    }
+}
+
+
+
