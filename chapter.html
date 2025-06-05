@@ -3107,7 +3107,8 @@
                     `
                 },
         ];
-  // Get the chapter index from the URL
+
+        // Get the chapter index from the URL
         const urlParams = new URLSearchParams(window.location.search);
         const chapterIndex = parseInt(urlParams.get('chapter'));
 
@@ -3116,10 +3117,10 @@
 
         // Display the chapter title and summary
         const chapterDescriptionDiv = document.getElementById('chapter-description');
-        chapterDescriptionDiv.innerHTML = 
+        chapterDescriptionDiv.innerHTML = `
             <h2>${chapter.title}</h2>
             <div>${chapter.summary}</div>
-        ;
+        `;
 
         // Apply Aksharamukha to convert content into Devanagari
         Aksharamukha.convert(chapterDescriptionDiv);
