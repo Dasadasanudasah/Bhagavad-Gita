@@ -3108,47 +3108,55 @@
                 },
         ];
 
-        // Get the chapter index from the URL
         const urlParams = new URLSearchParams(window.location.search);
-        const chapterIndex = parseInt(urlParams.get('chapter'));
+    const chapterIndex = parseInt(urlParams.get('chapter'));
 
-        // Get the chapter data based on the chapter index
-        const chapter = chapterSummaries[chapterIndex];
+    if (isNaN(chapterIndex) || chapterIndex < 0 || chapterIndex >= chapterSummaries.length) {
+        document.getElementById("chapter-description").innerHTML = "<p>Invalid chapter.</p>";
+        return;
+    }
 
-        // Display the chapter title and summary
-        const chapterDescriptionDiv = document.getElementById('chapter-description');
-        chapterDescriptionDiv.innerHTML = `
-            <h2>${chapter.title}</h2>
-            <div>${chapter.summary}</div>
-        `;
-const navDiv = document.createElement("div");
-navDiv.style.marginTop = "30px";
-navDiv.style.display = "flex";
-navDiv.style.justifyContent = "space-between";
+    const chapter = chapterSummaries[chapterIndex];
+    const chapterDescriptionDiv = document.getElementById('chapter-description');
+    chapterDescriptionDiv.innerHTML = `
+        <h2>${chapter.title}</h2>
+        <div>${chapter.summary}</div>
+    `;
 
-// Previous Chapter button
-if (chapterIndex > 0) {
-    const prevBtn = document.createElement("a");
-    prevBtn.href = `chapter.html?chapter=${chapterIndex - 1}`;
-    prevBtn.textContent = "← Previous Chapter";
-    prevBtn.className = "nav-btn";
-    navDiv.appendChild(prevBtn);
-} else {
-    navDiv.appendChild(document.createElement("span")); // Keeps spacing consistent
-}
+    // Navigation buttons
+    const navDiv = document.createElement("div");
+    navDiv.style.marginTop = "30px";
+    navDiv.style.display = "flex";
+    navDiv.style.justifyContent = "space-between";
 
-// Next Chapter button
-if (chapterIndex < chapterSummaries.length - 1) {
-    const nextBtn = document.createElement("a");
-    nextBtn.href = `chapter.html?chapter=${chapterIndex + 1}`;
-    nextBtn.textContent = "Next Chapter →";
-    nextBtn.className = "nav-btn";
-    navDiv.appendChild(nextBtn);
-}
+    // Previous Chapter button
+    if (chapterIndex > 0) {
+        const prevBtn = document.createElement("a");
+        prevBtn.href = `chapter.html?chapter=${chapterIndex - 1}`;
+        prevBtn.textContent = "← Previous Chapter";
+        prevBtn.className = "nav-btn";
+        navDiv.appendChild(prevBtn);
+    } else {
+        const emptySpan = document.createElement("span");
+        navDiv.appendChild(emptySpan);
+    }
 
-// Append the nav buttons after the chapter content
-chapterDescriptionDiv.appendChild(navDiv);
+    // Next Chapter button
+    if (chapterIndex < chapterSummaries.length - 1) {
+        const nextBtn = document.createElement("a");
+        nextBtn.href = `chapter.html?chapter=${chapterIndex + 1}`;
+        nextBtn.textContent = "Next Chapter →";
+        nextBtn.className = "nav-btn";
+        navDiv.appendChild(nextBtn);
+    }
 
+    chapterDescriptionDiv.appendChild(navDiv);
+
+    // Optional: Apply Aksharamukha if needed
+    if (typeof Aksharamukha !== 'undefined') {
+        Aksharamukha.convert(chapterDescriptionDiv);
+    }
+});
         
         // Apply Aksharamukha to convert content into Devanagari
         Aksharamukha.convert(chapterDescriptionDiv);
