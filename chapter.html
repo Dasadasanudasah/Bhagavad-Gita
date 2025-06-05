@@ -3121,7 +3121,35 @@
             <h2>${chapter.title}</h2>
             <div>${chapter.summary}</div>
         `;
+const navDiv = document.createElement("div");
+navDiv.style.marginTop = "30px";
+navDiv.style.display = "flex";
+navDiv.style.justifyContent = "space-between";
 
+// Previous Chapter button
+if (chapterIndex > 0) {
+    const prevBtn = document.createElement("a");
+    prevBtn.href = `chapter.html?chapter=${chapterIndex - 1}`;
+    prevBtn.textContent = "← Previous Chapter";
+    prevBtn.className = "nav-btn";
+    navDiv.appendChild(prevBtn);
+} else {
+    navDiv.appendChild(document.createElement("span")); // Keeps spacing consistent
+}
+
+// Next Chapter button
+if (chapterIndex < chapterSummaries.length - 1) {
+    const nextBtn = document.createElement("a");
+    nextBtn.href = `chapter.html?chapter=${chapterIndex + 1}`;
+    nextBtn.textContent = "Next Chapter →";
+    nextBtn.className = "nav-btn";
+    navDiv.appendChild(nextBtn);
+}
+
+// Append the nav buttons after the chapter content
+chapterDescriptionDiv.appendChild(navDiv);
+
+        
         // Apply Aksharamukha to convert content into Devanagari
         Aksharamukha.convert(chapterDescriptionDiv);
     </script>
