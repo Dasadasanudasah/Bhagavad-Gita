@@ -3108,55 +3108,7 @@
                 },
         ];
 
-        const urlParams = new URLSearchParams(window.location.search);
-    const chapterIndex = parseInt(urlParams.get('chapter'));
 
-    if (isNaN(chapterIndex) || chapterIndex < 0 || chapterIndex >= chapterSummaries.length) {
-        document.getElementById("chapter-description").innerHTML = "<p>Invalid chapter.</p>";
-        return;
-    }
-
-    const chapter = chapterSummaries[chapterIndex];
-    const chapterDescriptionDiv = document.getElementById('chapter-description');
-    chapterDescriptionDiv.innerHTML = `
-        <h2>${chapter.title}</h2>
-        <div>${chapter.summary}</div>
-    `;
-
-    // Navigation buttons
-    const navDiv = document.createElement("div");
-    navDiv.style.marginTop = "30px";
-    navDiv.style.display = "flex";
-    navDiv.style.justifyContent = "space-between";
-
-    // Previous Chapter button
-    if (chapterIndex > 0) {
-        const prevBtn = document.createElement("a");
-        prevBtn.href = `chapter.html?chapter=${chapterIndex - 1}`;
-        prevBtn.textContent = "← Previous Chapter";
-        prevBtn.className = "nav-btn";
-        navDiv.appendChild(prevBtn);
-    } else {
-        const emptySpan = document.createElement("span");
-        navDiv.appendChild(emptySpan);
-    }
-
-    // Next Chapter button
-    if (chapterIndex < chapterSummaries.length - 1) {
-        const nextBtn = document.createElement("a");
-        nextBtn.href = `chapter.html?chapter=${chapterIndex + 1}`;
-        nextBtn.textContent = "Next Chapter →";
-        nextBtn.className = "nav-btn";
-        navDiv.appendChild(nextBtn);
-    }
-
-    chapterDescriptionDiv.appendChild(navDiv);
-
-    // Optional: Apply Aksharamukha if needed
-    if (typeof Aksharamukha !== 'undefined') {
-        Aksharamukha.convert(chapterDescriptionDiv);
-    }
-});
     </script>
 </body>
 </html>
